@@ -52,10 +52,6 @@ public class EndScreenHandler : MonoBehaviour
         playAgain.onClick.RemoveListener(ResetScene);
     }
 
-    void EnableEndScreen() => endScreen.enabled = true;
-
-    void DisableEndScreen() => endScreen.enabled = false;
-
     void LoadMainMenu()
     {
         if (Logging)
@@ -69,4 +65,8 @@ public class EndScreenHandler : MonoBehaviour
             Debug.Log("LoadingMainMenu");
         //InsertLogic
     }
+    
+    void EnableEndScreen() => endScreen.enabled = true;
+
+    void DisableEndScreen() => endScreen.enabled = false;
 }
