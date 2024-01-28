@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6240547426728926821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6240547426728926827}
+  - component: {fileID: 6240547426728926826}
+  m_Layer: 0
+  m_Name: SoundSystemTestAppManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6240547426728926827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240547426728926821}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6240547426728926826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240547426728926821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b89d357b683c7e4fb8f1b742c3f86d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 8f53da977521f854280df1c5ce44e0a3, type: 2}
+  _hacks: {fileID: 11400000, guid: 8aa02e177a1438b4090a6bed5934cdc3, type: 2}
+  _clusterPrefab: {fileID: 6377655360525146352, guid: 8c7f628ce8b56b947b7cef8c0dd2a966,
+    type: 3}
+  _sceneLoaderPrefab: {fileID: 1897853059163855142, guid: e9605732d6016ce41870c3d20ac948f6,
+    type: 3}
+  _persistentFwkReferableSoundsGroupPrefab: {fileID: 7128550635775656567, guid: b1c44a7e4d08d194081a073ce0c01520,
+    type: 3}
+  _persistentAppReferableSoundsGroupPrefab: {fileID: 473962882774180702, guid: 08314e8dd0cedbd45aea8f66987916d4,
+    type: 3}
+  _persistentAppReferableSongsGroupPrefab: {fileID: 6712261642084520262, guid: fa0c2ced1dacd7e45b5b1b891e99b771,
+    type: 3}

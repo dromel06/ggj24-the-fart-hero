@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ec87eb5e2ea63458ee07cfa21c78cd, type: 3}
+  m_Name: HelpAppReferableSong
+  m_EditorClassIdentifier: 
+  <IdEnum>k__BackingField: 2
+  <Subject>k__BackingField:
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: e9b0556f1a8befb4d936654684c93ccb,
+      type: 3}
+    <Volume>k__BackingField: 0.5
+    <Looped>k__BackingField: 1
+    <FadeInTime>k__BackingField: 1
+    <FadeOutTime>k__BackingField: 1
