@@ -16,6 +16,8 @@ public class HeighAnimationText : MonoBehaviour
 
     private float velSlider;
 
+    public GameObject panel;
+
     // lista de sprites
     public Sprite[] spritesCaquitas;
 
@@ -25,7 +27,6 @@ public class HeighAnimationText : MonoBehaviour
     private float sizeCaquita;
     private void Start()
     {
-        InvokeRepeating("AumentarNumero", 0f, intervaloDeTiempo);
         textMesh = GetComponent<TextMeshProUGUI>();
         textMesh.text = valorInicial.ToString();
         slider.value = valorInicial;
@@ -34,8 +35,8 @@ public class HeighAnimationText : MonoBehaviour
         randomSprite = Random.Range(0, spritesCaquitas.Length);
         Debug.Log("Random: " + randomSprite);
         spriteRenderer.sprite = spritesCaquitas[randomSprite];
-        sizeCaquita = heightPoint / slider.maxValue  * 10;
-        caquitaImage.transform.localScale = new Vector3(sizeCaquita, sizeCaquita, sizeCaquita);
+        // sizeCaquita = heightPoint / slider.maxValue  * 10;
+        // caquitaImage.transform.localScale = new Vector3(sizeCaquita, sizeCaquita, sizeCaquita);
     }
 
     private void AumentarNumero()
@@ -57,4 +58,10 @@ public class HeighAnimationText : MonoBehaviour
         }
     }
 
+    private void endGame (float score) {
+        heightPoint = score;
+        InvokeRepeating("AumentarNumero", 0f, intervaloDeTiempo);
+        panel.GetComponent<Image>().color = new Color(0, 0, 0, 1f);
+        return;
+    }
 }

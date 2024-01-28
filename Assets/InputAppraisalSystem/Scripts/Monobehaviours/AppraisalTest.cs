@@ -57,7 +57,6 @@ public class AppraisalTest : MonoBehaviour
             _currentInputDataKeyIndex.text = "Current Key Index: " + _gameInputEvaluator.CurrentInputData.KeyIndex.ToString();
             _currentInputDataTimeStamp.text = "Current Time Stamp: " + _gameInputEvaluator.CurrentInputData.TimeStamp.ToString();
         }
-
         if (_gameInputEvaluator.NextInputData != null)
         {
             _nextInputDataKeyIndex.text = "Next Key Index: " + _gameInputEvaluator.NextInputData.KeyIndex.ToString();

@@ -409,6 +409,7 @@ RectTransform:
   m_LocalScale: {x: 0.01804181, y: 0.01804181, z: 0.01804181}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1600790120}
   - {fileID: 495847093}
   m_Father: {fileID: 224857304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -815,7 +816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434017123}
   - component: {fileID: 434017124}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: poop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 449039887}
   - component: {fileID: 449039888}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: bascula_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +989,7 @@ GameObject:
   - component: {fileID: 473585771}
   - component: {fileID: 473585773}
   - component: {fileID: 473585772}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1411,7 @@ GameObject:
   - component: {fileID: 743699790}
   - component: {fileID: 743699792}
   - component: {fileID: 743699791}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1660,7 +1661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Win!
+  m_text: GAME END
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1739,7 +1740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065578525}
   - component: {fileID: 1065578526}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117876426}
   - component: {fileID: 1117876427}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: we
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1934,7 +1935,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1600790120}
   - {fileID: 991229189}
   - {fileID: 702434959}
   - {fileID: 200191167}
@@ -1992,7 +1992,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126819199}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -2087,7 +2087,7 @@ GameObject:
   - component: {fileID: 1358485041}
   - component: {fileID: 1358485043}
   - component: {fileID: 1358485042}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2270,17 +2270,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600790119}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 973}
+  m_LocalScale: {x: 0.52243257, y: 0.52243257, z: 0.52243257}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1126819200}
+  m_Father: {fileID: 168973725}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 68, y: -65}
+  m_SizeDelta: {x: 1816.2844, y: 1043.7965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1600790121
 MonoBehaviour:
@@ -2295,14 +2295,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.56078434}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: af752360422d04c3ebb7e36c2bda61ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2329,7 +2329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1664269959}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2365,7 +2365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745936524}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

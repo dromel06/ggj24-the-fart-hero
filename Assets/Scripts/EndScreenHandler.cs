@@ -10,7 +10,7 @@ public class EndScreenHandler : MonoBehaviour
     private string winMessage;
 
     [SerializeField] private string loseMessage;
-    [SerializeField] private string scoreMessage;
+    // [SerializeField] private string scoreMessage;
 
     [Header("UI Elements")] [SerializeField]
     private TMP_Text winLoseText;
@@ -18,6 +18,8 @@ public class EndScreenHandler : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] public Button returnToMainMenu;
     [SerializeField] public Button playAgain;
+
+    [SerializeField] private HeighAnimationText heightText;
 
     [Header("Debug")] [SerializeField] private bool Logging;
 
@@ -35,9 +37,9 @@ public class EndScreenHandler : MonoBehaviour
             winLoseText.text = winMessage;
         else
             winLoseText.text = loseMessage;
-
-        string finalScore = score.ToString();
-        scoreText.text = $"{scoreMessage}: {finalScore}";
+        // heightText.endGame(score);
+        // string finalScore = score.ToString();
+        // scoreText.text = $"{scoreMessage}: {finalScore}";
     }
 
     private void OnEnable()

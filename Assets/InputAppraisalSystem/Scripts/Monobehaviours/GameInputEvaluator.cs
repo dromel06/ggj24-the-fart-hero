@@ -152,7 +152,7 @@ public class GameInputEvaluator : MonoBehaviour
     private void updateInputDatasIndex()
     {
         if (getIsThereNextTimeStamp())
-        { 
+        {
             if (AudioTime >= _inputDatas[CurrentInputDataIndex + 1].TimeStamp)
             {
                 CurrentInputDataIndex++;
