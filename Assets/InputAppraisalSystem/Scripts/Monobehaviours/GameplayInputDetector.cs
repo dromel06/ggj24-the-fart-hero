@@ -13,6 +13,8 @@ public class GameplayInputDetector : MonoBehaviour
     [SerializeField] private List<KeyCode> InputKeys;
     [SerializeField] private int _transpose = 0;
 
+    [SerializeField] private List<Animator> _animators;
+
     private AudioSource _audioSource;
 
     private void Awake()
@@ -29,6 +31,7 @@ public class GameplayInputDetector : MonoBehaviour
                 OnGameKeyDown.Invoke(i);
                 _audioSource.pitch = Mathf.Pow(2, (_keysNotes[i] + _transpose) / 12.0f);
                 _audioSource.Play();
+                _animators[i].SetTrigger("fart");
             }
         }
     }
