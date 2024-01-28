@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -25,14 +24,14 @@ public class AppraisalTest : MonoBehaviour
 
     void Awake()
     {
-        _gameInputEvaluator.OnExcellentInputDown += onExcellentInputButtonDown;
-        _gameInputEvaluator.OnGoodInputDown += onGoodInputButtonDown;
+        _gameInputEvaluator.OnExcellentInputDown += onExcellentInputButtonDownHandler;
+        _gameInputEvaluator.OnGoodInputDown += onGoodInputButtonDownHandler;
 
-        _gameInputEvaluator.OnBadInputTimingDown += onBadInputTimingDown;
-        _gameInputEvaluator.OnBadInputIndexDown += onBadInputIndexDown;
+        _gameInputEvaluator.OnBadInputTimingDown += onBadInputTimingDownHandler;
+        _gameInputEvaluator.OnBadInputIndexDown += onBadInputIndexDownHandler;
 
-        _gameInputEvaluator.OnMissedInput += onMissedInput;
-        _gameInputEvaluator.OnRatioChanged += onRatioChanged;
+        _gameInputEvaluator.OnMissedInput += onMissedInputHandler;
+        _gameInputEvaluator.OnRatioChanged += onRatioChangedHandler;
     }
 
     void Start()
@@ -61,42 +60,42 @@ public class AppraisalTest : MonoBehaviour
 
     private void OnDestroy()
     {
-        _gameInputEvaluator.OnExcellentInputDown -= onExcellentInputButtonDown;
-        _gameInputEvaluator.OnGoodInputDown -= onGoodInputButtonDown;
+        _gameInputEvaluator.OnExcellentInputDown -= onExcellentInputButtonDownHandler;
+        _gameInputEvaluator.OnGoodInputDown -= onGoodInputButtonDownHandler;
 
-        _gameInputEvaluator.OnBadInputTimingDown -= onBadInputTimingDown;
-        _gameInputEvaluator.OnBadInputIndexDown -= onBadInputIndexDown;
+        _gameInputEvaluator.OnBadInputTimingDown -= onBadInputTimingDownHandler;
+        _gameInputEvaluator.OnBadInputIndexDown -= onBadInputIndexDownHandler;
 
-        _gameInputEvaluator.OnMissedInput -= onMissedInput;
-        _gameInputEvaluator.OnRatioChanged -= onRatioChanged;
+        _gameInputEvaluator.OnMissedInput -= onMissedInputHandler;
+        _gameInputEvaluator.OnRatioChanged -= onRatioChangedHandler;
     }
 
-    private void onRatioChanged(float newRatio)
+    private void onRatioChangedHandler(float newRatio)
     {
         _performanceRatio.text = "Performance ratio: " + newRatio.ToString();
     }
 
-    private void onExcellentInputButtonDown()
+    private void onExcellentInputButtonDownHandler()
     {
         setResult("Excellent!");
     }
 
-    private void onGoodInputButtonDown()
+    private void onGoodInputButtonDownHandler()
     {
         setResult("Good!");
     }
 
-    private void onBadInputTimingDown()
+    private void onBadInputTimingDownHandler()
     {
         setResult("Bad!");
     }
 
-    private void onBadInputIndexDown()
+    private void onBadInputIndexDownHandler()
     {
         setResult("Mistake!");
     }
 
-    private void onMissedInput()
+    private void onMissedInputHandler()
     {
         setResult("Missed!");
     }

@@ -94,7 +94,7 @@ public class GameInputEvaluator : MonoBehaviour
 
     public void Awake()
     {
-        _gameInputDetector.OnGameKeyDown += onGameKeyDown; 
+        _gameInputDetector.OnGameKeyDown += onGameKeyDownHandler; 
     }
 
     public void Init(List<InputData> inputDatas)
@@ -167,10 +167,10 @@ public class GameInputEvaluator : MonoBehaviour
 
     private void OnDestroy()
     {
-        _gameInputDetector.OnGameKeyDown -= onGameKeyDown;
+        _gameInputDetector.OnGameKeyDown -= onGameKeyDownHandler;
     }
 
-    private void onGameKeyDown(int keyIndex)
+    private void onGameKeyDownHandler(int keyIndex)
     {
         if (!Initialized)
         {
