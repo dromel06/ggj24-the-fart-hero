@@ -15,7 +15,7 @@ MonoBehaviour:
   <IdEnum>k__BackingField: 1
   <Subject>k__BackingField:
     <AudioClip>k__BackingField: {fileID: 8300000, guid: 6b24b20b604524d41843e15b2aa7dd88, type: 3}
-    <Volume>k__BackingField: 0.5
+    <Volume>k__BackingField: 0.25
     <Looped>k__BackingField: 1
     <FadeInTime>k__BackingField: 0.1
     <FadeOutTime>k__BackingField: 0.1

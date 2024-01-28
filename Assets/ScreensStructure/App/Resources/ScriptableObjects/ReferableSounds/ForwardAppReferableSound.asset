@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IdEnum>k__BackingField: 1
   <Subject>k__BackingField:
-    <AudioClip>k__BackingField: {fileID: 8300000, guid: 7b0686bedfb9cad4d876498000e33995,
-      type: 3}
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 251715e0e3f7ec544999c6482af826fc, type: 3}
     <Volume>k__BackingField: 1
     <Looped>k__BackingField: 0
