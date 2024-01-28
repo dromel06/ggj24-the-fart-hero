@@ -689,7 +689,7 @@ PrefabInstance:
     - target: {fileID: 3955809050483425164, guid: efe40973691e0cf46a783d93c9474eb8, type: 3}
       propertyPath: Logos.Array.data[0].Image
       value: 
-      objectReference: {fileID: 21300000, guid: 6587fa7ce8a3a1e40a45db0c455f7cf1, type: 3}
+      objectReference: {fileID: 21300000, guid: ab12dbfddd600f14ab36b5249fff430e, type: 3}
     - target: {fileID: 3955809050483425164, guid: efe40973691e0cf46a783d93c9474eb8, type: 3}
       propertyPath: SceneToLoadAfterSequenceMobile
       value: MainMenu
