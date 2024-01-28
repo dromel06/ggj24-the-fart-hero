@@ -104,6 +104,6 @@ MonoBehaviour:
   animationDurationIN: 2
   delayIN: 0
   introEaseType: 1
-  animationDurationOUT: 2
+  animationDurationOUT: 1.5
   delayOUT: 0
   outroEaseType: 1

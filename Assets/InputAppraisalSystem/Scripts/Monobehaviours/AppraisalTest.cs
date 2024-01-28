@@ -41,11 +41,13 @@ public class AppraisalTest : MonoBehaviour
     void HandleLoadData()
     {
         _inputDatas = _poopSpawner.inputData;
-    }
-    void Start()
-    {
         _gameInputEvaluator.Init(_inputDatas);
     }
+
+    //void Start()
+    //{
+    //    _gameInputEvaluator.Init(_inputDatas);
+    //}
 
      
     private void Update()
