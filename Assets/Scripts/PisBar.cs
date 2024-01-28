@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class PisBar : MonoBehaviour
 {
+    //  create a list of variables
+    [SerializeField]
+    public float min = 0f;
+    [SerializeField]
+    public float max = 50f;
+
     private float life;
     public RectTransform arrow;
     public RectTransform limitBottom;
     public RectTransform limitTop;
+
+    private float minLimit;
+    private float maxLimit;
     // Start is called before the first frame update
     void Start()
     {
-        life = (limitTop.position.y + limitBottom.position.y) / 2;
+        minLimit = limitBottom.position.y * min / 100;
+        maxLimit = limitTop.position.y * max / 100;
+        life = maxLimit / 2;
 
     }
 
