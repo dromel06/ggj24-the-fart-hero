@@ -37,7 +37,7 @@ public class HeightCount : MonoBehaviour
         }
         else{
             listOfS = "";
-            for(int i = 0; i < height-6; i+= 2){
+            for(int i = 0; i < height-5; i+= 2){
                 listOfS += "S";
             }
             heightLb.text = "<LB" + listOfS + ">";
