@@ -908,23 +908,23 @@ MonoBehaviour:
   _inputDatas:
   - KeyIndex: 0
     TimeStamp: 3
-  - KeyIndex: 1
+  - KeyIndex: 0
     TimeStamp: 6
-  - KeyIndex: 2
+  - KeyIndex: 0
     TimeStamp: 9
-  - KeyIndex: 3
+  - KeyIndex: 0
     TimeStamp: 12
   - KeyIndex: 0
     TimeStamp: 15
-  - KeyIndex: 1
+  - KeyIndex: 0
     TimeStamp: 18
-  - KeyIndex: 2
+  - KeyIndex: 0
     TimeStamp: 21
-  - KeyIndex: 3
+  - KeyIndex: 0
     TimeStamp: 24
   - KeyIndex: 0
     TimeStamp: 27
-  - KeyIndex: 1
+  - KeyIndex: 0
     TimeStamp: 30
   _currentInputDataIndex: {fileID: 389392598}
   _currentInputDataKeyIndex: {fileID: 722374341}
@@ -1370,9 +1370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _registersMisses: 0
-  _timeStampMinDifference: 0.25
-  _inputExcellentThreshold: 0.05
-  _inputGoodThreshold: 1
+  _timeStampMinDifference: 0.31
+  _inputExcellentThreshold: 0.1
+  _inputGoodThreshold: 0.3
   _gameInputDetector: {fileID: 817427967}
   _audioSource: {fileID: 1777916742}
 --- !u!4 &1255010957

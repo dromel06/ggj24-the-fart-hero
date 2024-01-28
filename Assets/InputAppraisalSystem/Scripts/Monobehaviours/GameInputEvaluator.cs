@@ -116,22 +116,24 @@ public class GameInputEvaluator : MonoBehaviour
 
     private void handleMissedInputs()
     {
-        if (getIsThereCurrentTimeStamp())
+        if (getIsThereCurrentTimeStamp() && !getCurrentInputDataIndexWasProcessed())
         {
-            if (getCurrentInputDataIndexIsAlreadyProcessed())
+            if (AudioTime > (CurrentInputData.TimeStamp + _inputGoodThreshold))
             {
-                if (AudioTime > (CurrentInputData.TimeStamp + _inputGoodThreshold))
-                {
-                    OnMissedInput.Invoke();
-                    addCurrentInputDataToProcessed();
-                }
+                OnMissedInput.Invoke();
+                addCurrentInputDataToProcessed();
             }
         }
     }
 
-    private bool getCurrentInputDataIndexIsAlreadyProcessed()
+    private bool getCurrentInputDataIndexWasProcessed()
     {
-        return !_inputDatasIndexesProcessed.Contains(CurrentInputDataIndex);
+        return _inputDatasIndexesProcessed.Contains(CurrentInputDataIndex);
+    }
+
+    private bool getNextInputDataIndexWasProcessed()
+    {
+        return _inputDatasIndexesProcessed.Contains(CurrentInputDataIndex + 1);
     }
 
     private void updateInputDatasIndex()
@@ -171,8 +173,11 @@ public class GameInputEvaluator : MonoBehaviour
             {
                 if (keyIndex == CurrentInputData.KeyIndex)
                 {
-                    OnExcellentInputDown.Invoke();
-                    addCurrentInputDataToProcessed();
+                    if (!getCurrentInputDataIndexWasProcessed())
+                    {
+                        OnExcellentInputDown.Invoke();
+                        addCurrentInputDataToProcessed();
+                    }
                 }
                 else
                 {
@@ -185,8 +190,11 @@ public class GameInputEvaluator : MonoBehaviour
             {
                 if (keyIndex == CurrentInputData.KeyIndex)
                 {
-                    OnGoodInputDown.Invoke();
-                    addCurrentInputDataToProcessed();
+                    if (!getCurrentInputDataIndexWasProcessed())
+                    {
+                        OnGoodInputDown.Invoke();
+                        addCurrentInputDataToProcessed();
+                    }
                 }
                 else
                 {
@@ -197,7 +205,7 @@ public class GameInputEvaluator : MonoBehaviour
             }
         }
 
-        if (!resultReady && getCurrentInputDataIndexIsAlreadyProcessed())
+        if (!resultReady)
         {
             if (getIsThereNextTimeStamp())
             {
@@ -205,8 +213,11 @@ public class GameInputEvaluator : MonoBehaviour
                 {
                     if (keyIndex == NextInputData.KeyIndex)
                     {
-                        OnExcellentInputDown.Invoke();
-                        addNextInputDataToProcessed();
+                        if (!getNextInputDataIndexWasProcessed())
+                        {
+                            OnExcellentInputDown.Invoke();
+                            addNextInputDataToProcessed();
+                        }
                     }
                     else
                     {
@@ -217,8 +228,11 @@ public class GameInputEvaluator : MonoBehaviour
                 {
                     if (keyIndex == NextInputData.KeyIndex)
                     {
-                        OnGoodInputDown.Invoke();
-                        addNextInputDataToProcessed();
+                        if (!getNextInputDataIndexWasProcessed())
+                        {
+                            OnGoodInputDown.Invoke();
+                            addNextInputDataToProcessed();
+                        }
                     }
                     else
                     {
