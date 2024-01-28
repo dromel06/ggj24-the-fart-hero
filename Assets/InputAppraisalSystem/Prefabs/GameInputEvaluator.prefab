@@ -44,7 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71025646ef8c32439a9f787f5af71a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _registersMisses: 0
+  _showsMisses: 1
+  _maxAbsoluteRatio: 1
+  _excellentInputRatioIncrement: 0.2
+  _goodInputRatioIncrement: 0.1
+  _badInputIndexDecrement: 0.2
+  _badInputTimingDecrement: 0.1
+  _missedInputDecrement: 0.1
   _timeStampMinDifference: 0.31
   _inputExcellentThreshold: 0.1
   _inputGoodThreshold: 0.3

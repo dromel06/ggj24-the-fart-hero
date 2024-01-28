@@ -46,25 +46,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputDatas:
   - KeyIndex: 0
+    TimeStamp: 2
+  - KeyIndex: 0
     TimeStamp: 3
+  - KeyIndex: 0
+    TimeStamp: 4
+  - KeyIndex: 0
+    TimeStamp: 5
   - KeyIndex: 0
     TimeStamp: 6
   - KeyIndex: 0
+    TimeStamp: 7
+  - KeyIndex: 0
+    TimeStamp: 8
+  - KeyIndex: 0
     TimeStamp: 9
   - KeyIndex: 0
-    TimeStamp: 12
+    TimeStamp: 10
   - KeyIndex: 0
-    TimeStamp: 15
-  - KeyIndex: 0
-    TimeStamp: 18
-  - KeyIndex: 0
-    TimeStamp: 21
-  - KeyIndex: 0
-    TimeStamp: 24
-  - KeyIndex: 0
-    TimeStamp: 27
-  - KeyIndex: 0
-    TimeStamp: 30
+    TimeStamp: 11
   _currentInputDataIndex: {fileID: 0}
   _currentInputDataKeyIndex: {fileID: 0}
   _currentInputDataTimeStamp: {fileID: 0}
@@ -72,5 +72,6 @@ MonoBehaviour:
   _nextInputDataTimeStamp: {fileID: 0}
   _audioTimer: {fileID: 0}
   _lastGameInputResult: {fileID: 0}
+  _performanceRatio: {fileID: 0}
   _songAudioSource: {fileID: 0}
   _gameInputEvaluator: {fileID: 0}

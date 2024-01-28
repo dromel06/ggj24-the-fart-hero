@@ -19,9 +19,21 @@ public class GameInputEvaluator : MonoBehaviour
 
     public event Action OnMissedInput;
 
+    public event Action<float> OnRatioChanged;
+
     private const int MIN_COUNT_TO_VALIDATE_BETWEEN_TIMESTAMPS = 2;
 
-    [SerializeField] bool _registersMisses = false;
+    [SerializeField] bool _showsMisses = false;
+
+    [SerializeField] float _maxAbsoluteRatio = 1.0f;
+
+    [SerializeField] float _excellentInputRatioIncrement = 0.2f;
+    [SerializeField] float _goodInputRatioIncrement = 0.1f;
+
+    [SerializeField] float _badInputIndexDecrement = 0.2f;
+    [SerializeField] float _badInputTimingDecrement = 0.1f;
+    [SerializeField] float _missedInputDecrement = 0.1f;
+
     [SerializeField] float _timeStampMinDifference = 0.25f;
 
     [SerializeField] float _inputExcellentThreshold = 0.05f;
@@ -37,6 +49,7 @@ public class GameInputEvaluator : MonoBehaviour
 
     public bool Initialized { get; private set; } = false;
     public int CurrentInputDataIndex { get; private set; } = -1;
+    public float PerformanceRatio { get; private set; } = 0;
 
     public InputData CurrentInputData
     {
@@ -101,7 +114,7 @@ public class GameInputEvaluator : MonoBehaviour
             return;
         }
 
-        if (_registersMisses)
+        if (_showsMisses)
         {
             handleMissedInputs();
         }
@@ -120,7 +133,7 @@ public class GameInputEvaluator : MonoBehaviour
         {
             if (AudioTime > (CurrentInputData.TimeStamp + _inputGoodThreshold))
             {
-                OnMissedInput.Invoke();
+                handleMissedInput();
                 addCurrentInputDataToProcessed();
             }
         }
@@ -175,13 +188,13 @@ public class GameInputEvaluator : MonoBehaviour
                 {
                     if (!getCurrentInputDataIndexWasProcessed())
                     {
-                        OnExcellentInputDown.Invoke();
+                        handleExcellentInput();
                         addCurrentInputDataToProcessed();
                     }
                 }
                 else
                 {
-                    OnBadInputIndexDown.Invoke();
+                    handleBadInputIndex();
                 }
 
                 resultReady = true;
@@ -192,13 +205,13 @@ public class GameInputEvaluator : MonoBehaviour
                 {
                     if (!getCurrentInputDataIndexWasProcessed())
                     {
-                        OnGoodInputDown.Invoke();
+                        handleGoodInput();
                         addCurrentInputDataToProcessed();
                     }
                 }
                 else
                 {
-                    OnBadInputIndexDown.Invoke();
+                    handleBadInputIndex();
                 }
 
                 resultReady = true;
@@ -215,13 +228,13 @@ public class GameInputEvaluator : MonoBehaviour
                     {
                         if (!getNextInputDataIndexWasProcessed())
                         {
-                            OnExcellentInputDown.Invoke();
+                            handleExcellentInput();
                             addNextInputDataToProcessed();
                         }
                     }
                     else
                     {
-                        OnBadInputIndexDown.Invoke();
+                        handleBadInputIndex();
                     }
                 }
                 else if (inputTimeStamp >= (NextInputData.TimeStamp - _inputGoodThreshold))
@@ -230,25 +243,77 @@ public class GameInputEvaluator : MonoBehaviour
                     {
                         if (!getNextInputDataIndexWasProcessed())
                         {
-                            OnGoodInputDown.Invoke();
+                            handleGoodInput();
                             addNextInputDataToProcessed();
                         }
                     }
                     else
                     {
-                        OnBadInputIndexDown.Invoke();
+                        handleBadInputIndex();
                     }
                 }
                 else
                 {
-                    OnBadInputTimingDown.Invoke();
+                    handleBadInputTiming();
                 }
             }
             else
             {
-                OnBadInputTimingDown.Invoke();
+                handleBadInputTiming();
             }
         }
+    }
+
+    private void handleExcellentInput()
+    {
+        OnExcellentInputDown?.Invoke();
+        increaseRatio(_excellentInputRatioIncrement); 
+    }
+
+    private void handleGoodInput()
+    {
+        OnGoodInputDown?.Invoke();
+        increaseRatio(_goodInputRatioIncrement);
+    }
+
+    private void handleBadInputTiming()
+    {
+        OnBadInputTimingDown?.Invoke();
+        decreaseRatio(_badInputTimingDecrement);
+    }
+
+    private void handleBadInputIndex()
+    {
+        OnBadInputIndexDown?.Invoke();
+        decreaseRatio(_badInputIndexDecrement);
+    }
+
+    private void handleMissedInput()
+    {
+        OnMissedInput?.Invoke();
+        decreaseRatio(_missedInputDecrement);
+    }
+
+    private void increaseRatio(float value)
+    {
+        PerformanceRatio += value;
+        if (PerformanceRatio > _maxAbsoluteRatio)
+        {
+            PerformanceRatio = _maxAbsoluteRatio;
+        }
+
+        OnRatioChanged?.Invoke(PerformanceRatio);
+    }
+
+    private void decreaseRatio(float value)
+    {
+        PerformanceRatio -= value;
+        if (PerformanceRatio < -_maxAbsoluteRatio)
+        {
+            PerformanceRatio = -_maxAbsoluteRatio;
+        }
+
+        OnRatioChanged?.Invoke(PerformanceRatio);
     }
 
     private void addCurrentInputDataToProcessed()
