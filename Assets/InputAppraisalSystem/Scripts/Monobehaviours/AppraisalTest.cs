@@ -18,6 +18,8 @@ public class AppraisalTest : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _audioTimer;
     [SerializeField] private TextMeshProUGUI _lastGameInputResult;
 
+    [SerializeField] private TextMeshProUGUI _performanceRatio;
+
     [SerializeField] AudioSource _songAudioSource;
     [SerializeField] GameInputEvaluator _gameInputEvaluator;
 
@@ -30,6 +32,7 @@ public class AppraisalTest : MonoBehaviour
         _gameInputEvaluator.OnBadInputIndexDown += onBadInputIndexDown;
 
         _gameInputEvaluator.OnMissedInput += onMissedInput;
+        _gameInputEvaluator.OnRatioChanged += onRatioChanged;
     }
 
     void Start()
@@ -65,6 +68,12 @@ public class AppraisalTest : MonoBehaviour
         _gameInputEvaluator.OnBadInputIndexDown -= onBadInputIndexDown;
 
         _gameInputEvaluator.OnMissedInput -= onMissedInput;
+        _gameInputEvaluator.OnRatioChanged -= onRatioChanged;
+    }
+
+    private void onRatioChanged(float newRatio)
+    {
+        _performanceRatio.text = "Performance ratio: " + newRatio.ToString();
     }
 
     private void onExcellentInputButtonDown()

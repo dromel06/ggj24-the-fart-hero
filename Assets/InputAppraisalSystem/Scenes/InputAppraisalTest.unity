@@ -559,6 +559,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1777916742}
     - target: {fileID: 8395394077948221052, guid: b95e26338c822f84ba36c811e0df8ee1, type: 3}
+      propertyPath: _performanceRatio
+      value: 
+      objectReference: {fileID: 8979255502276437561}
+    - target: {fileID: 8395394077948221052, guid: b95e26338c822f84ba36c811e0df8ee1, type: 3}
       propertyPath: _gameInputEvaluator
       value: 
       objectReference: {fileID: 1255010956}
@@ -850,6 +854,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715f510d9337e8940b9a73c9dcb655c6, type: 3}
+--- !u!114 &8979255502276437561 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6228803594081114151, guid: 715f510d9337e8940b9a73c9dcb655c6, type: 3}
+  m_PrefabInstance: {fileID: 8979255502276437560}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
