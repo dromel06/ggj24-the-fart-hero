@@ -1,3 +1,4 @@
+using GodFramework;
 using UnityEngine;
 
 public abstract class AppState : BaseState<AppState, AppManager>
@@ -67,7 +68,13 @@ public class AppStates
         public override void HandleEnter(AppManager appManager)
         {
             base.HandleEnter(appManager);
+
             Debug.Log("Handled app manager state: " + Name + " enter.");
+
+            if (AudioPlayerProvider.GetOrCreate(out IAudioPlayer audioPlayer))
+            {
+                audioPlayer.StopSong();
+            }
         }
     }
 

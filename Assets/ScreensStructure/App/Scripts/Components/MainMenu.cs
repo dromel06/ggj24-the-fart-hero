@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     private void onPlayButtonDown()
     {
         playForwardSound();
-        FwkPubSub.OnLoadScene.Dispatch(this, new LoadSceneArg(AppScenes.InGame, true));
+        FwkPubSub.OnLoadScene.Dispatch(this, new LoadSceneArg(AppScenes.Game, false));
     }
 
     private void onHelpButtonDown()

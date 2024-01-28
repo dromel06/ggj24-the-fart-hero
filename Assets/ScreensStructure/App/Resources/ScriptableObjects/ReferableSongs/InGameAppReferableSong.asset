@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IdEnum>k__BackingField: 4
   <Subject>k__BackingField:
-    <AudioClip>k__BackingField: {fileID: 8300000, guid: 4915a8d4758737345bc09a4ae315f8b7,
-      type: 3}
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 4915a8d4758737345bc09a4ae315f8b7, type: 3}
     <Volume>k__BackingField: 0.5
     <Looped>k__BackingField: 1
-    <FadeInTime>k__BackingField: 1
-    <FadeOutTime>k__BackingField: 1
+    <FadeInTime>k__BackingField: 0.1
+    <FadeOutTime>k__BackingField: 0.1

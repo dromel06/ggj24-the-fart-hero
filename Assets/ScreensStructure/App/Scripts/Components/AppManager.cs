@@ -12,7 +12,7 @@ public enum AppScenes
 {
     None,
     MainMenu,
-    InGame, 
+    Game, 
     Help,
     Credits
 }
@@ -43,6 +43,7 @@ public class AppManager : BaseAppManager
                 if (CurrentState == null)
                 {
                     CurrentState = new AppStates.AtSplash(true);
+                    CurrentState.HandleEnter(this);
                 }
                 else
                 {
@@ -54,6 +55,7 @@ public class AppManager : BaseAppManager
                 if (CurrentState == null)
                 {
                     CurrentState = new AppStates.AtMainMenu(true);
+                    CurrentState.HandleEnter(this);
                 }
                 else
                 {
@@ -65,6 +67,7 @@ public class AppManager : BaseAppManager
                 if (CurrentState == null)
                 {
                     CurrentState = new AppStates.AtHelp(true);
+                    CurrentState.HandleEnter(this);
                 }
                 else
                 {
@@ -76,6 +79,7 @@ public class AppManager : BaseAppManager
                 if (CurrentState == null)
                 {
                     CurrentState = new AppStates.AtCredits(true);
+                    CurrentState.HandleEnter(this);
                 }
                 else
                 {
@@ -83,10 +87,11 @@ public class AppManager : BaseAppManager
                 }
                 break;
 
-            case nameof(AppScenes.InGame):
+            case nameof(AppScenes.Game):
                 if (CurrentState == null)
                 {
                     CurrentState = new AppStates.AtInGame(true);
+                    CurrentState.HandleEnter(this);
                 }
                 else
                 {
