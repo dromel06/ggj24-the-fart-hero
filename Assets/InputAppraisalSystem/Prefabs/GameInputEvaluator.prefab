@@ -46,13 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showsMisses: 1
   _maxAbsoluteRatio: 1
-  _excellentInputRatioIncrement: 0.2
-  _goodInputRatioIncrement: 0.1
+  _excellentInputRatioIncrement: 0.1
+  _goodInputRatioIncrement: 0.2
   _badInputIndexDecrement: 0.2
   _badInputTimingDecrement: 0.1
   _missedInputDecrement: 0.1
-  _timeStampMinDifference: 0.31
+  _timeStampMinDifference: 0.41
   _inputExcellentThreshold: 0.1
-  _inputGoodThreshold: 0.3
+  _inputGoodThreshold: 0.2
   _gameInputDetector: {fileID: 0}
   _audioSource: {fileID: 0}

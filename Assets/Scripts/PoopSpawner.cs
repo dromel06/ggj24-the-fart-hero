@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,20 +12,23 @@ public class PoopSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     private string archivoDeMusica = "tiemposDeNotas.txt";
     private string filePath = Application.dataPath + "/archivos de cancion/";
-    private List<InputData> inputData;
+    public List<InputData> inputData;
     private float systemTime;
     private int indextemp = 0;
     float tolerancia = 0.1f;
+
+    public event Action OnLoadTimeStamps;
     //private InputData[] inputDataTemp;
 
     private void Awake()
     {
-        LoadTimeStamps();
+  
     }
 
     private void Start()
     {
         Audio.Play();  
+        LoadTimeStamps();
     }
 
     private void Update()
@@ -36,7 +40,7 @@ public class PoopSpawner : MonoBehaviour
             if (Mathf.Abs((inputData[indextemp].TimeStamp-2) - systemTime) < tolerancia)
             //if(inputData[indextemp].TimeStamp == systemTime)
             {
-                Debug.Log("Tick en el tiempo de juego: " + systemTime);
+               // Debug.Log("Tick en el tiempo de juego: " + systemTime);
                 InstanciadorDePoops(indextemp);
                 indextemp++;
             }
@@ -46,22 +50,6 @@ public class PoopSpawner : MonoBehaviour
             Debug.Log("termino el archivo");
         }
 
-        /*if(Input.GetKeyDown(KeyCode.D))
-        {
-            WriteExternalTxt(Path.Combine(filePath, "Notas2.txt"), 1.ToString() + '\n', true);
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            WriteExternalTxt(Path.Combine(filePath, "Notas2.txt"), 2.ToString() + '\n', true);
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            WriteExternalTxt(Path.Combine(filePath, "Notas2.txt"), 3.ToString() + '\n', true);
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            WriteExternalTxt(Path.Combine(filePath, "Notas2.txt"), 4.ToString() + '\n', true);
-        }*/
     }
 
     public void InstanciadorDePoops(int index)
@@ -114,6 +102,8 @@ public class PoopSpawner : MonoBehaviour
                 listIndex++;
                 //Debug.Log(inputData[listIndex-1].Index);
             }
+            
+            OnLoadTimeStamps?.Invoke();
         }
         else
         {

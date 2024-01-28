@@ -267,23 +267,27 @@ public class GameInputEvaluator : MonoBehaviour
     private void handleExcellentInput()
     {
         OnExcellentInputDown?.Invoke();
+        Debug.Log("Excelent");
         increaseRatio(_excellentInputRatioIncrement); 
     }
 
     private void handleGoodInput()
     {
+        Debug.Log("Good");
         OnGoodInputDown?.Invoke();
         increaseRatio(_goodInputRatioIncrement);
     }
 
     private void handleBadInputTiming()
     {
+        Debug.Log("Bad");
         OnBadInputTimingDown?.Invoke();
         decreaseRatio(_badInputTimingDecrement);
     }
 
     private void handleBadInputIndex()
     {
+        Debug.Log("Mistake");
         OnBadInputIndexDown?.Invoke();
         decreaseRatio(_badInputIndexDecrement);
     }

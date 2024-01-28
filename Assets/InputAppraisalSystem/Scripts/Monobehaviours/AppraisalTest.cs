@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ public class AppraisalTest : MonoBehaviour
 
     [SerializeField] AudioSource _songAudioSource;
     [SerializeField] GameInputEvaluator _gameInputEvaluator;
+    private PoopSpawner _poopSpawner;
 
     void Awake()
     {
@@ -32,13 +34,20 @@ public class AppraisalTest : MonoBehaviour
 
         _gameInputEvaluator.OnMissedInput += onMissedInputHandler;
         _gameInputEvaluator.OnRatioChanged += onRatioChangedHandler;
+        _poopSpawner = FindObjectOfType<PoopSpawner>();
+        _poopSpawner.OnLoadTimeStamps += HandleLoadData;
     }
 
+    void HandleLoadData()
+    {
+        _inputDatas = _poopSpawner.inputData;
+    }
     void Start()
     {
         _gameInputEvaluator.Init(_inputDatas);
     }
 
+     
     private void Update()
     {
         if (_gameInputEvaluator.CurrentInputData != null)

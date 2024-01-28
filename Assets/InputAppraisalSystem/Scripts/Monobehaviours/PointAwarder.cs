@@ -4,7 +4,7 @@ using UnityEngine;
 public class PointAwarder : MonoBehaviour
 {
     private float score = 0;
-    private GameInputEvaluator evaluator;
+    [SerializeField] private GameInputEvaluator evaluator;
 
     [SerializeField] private float mistakeScore;
     [SerializeField] private float goodScore;
