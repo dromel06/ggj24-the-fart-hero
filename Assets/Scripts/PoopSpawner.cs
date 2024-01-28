@@ -27,7 +27,7 @@ public class PoopSpawner : MonoBehaviour
 
     private void Start()
     {
-        Audio.Play();  
+        Audio.Play();
         LoadTimeStamps();
     }
 
@@ -56,19 +56,19 @@ public class PoopSpawner : MonoBehaviour
     {
         switch(inputData[index].KeyIndex)
         {
-            case 1:
+            case 0:
                 poop.GetComponent<SpriteRenderer>().sprite = poopsSprites[0];
                 Instantiate(poop, spawnPoints[0].position, Quaternion.identity);
                 break;
-            case 2:
+            case 1:
                 poop.GetComponent<SpriteRenderer>().sprite = poopsSprites[1];
                 Instantiate(poop, spawnPoints[1].position, Quaternion.identity);
                 break;
-            case 3:
+            case 2:
                 poop.GetComponent<SpriteRenderer>().sprite = poopsSprites[2];
                 Instantiate(poop, spawnPoints[2].position, Quaternion.identity);
                 break;
-            case 4:
+            case 3:
                 poop.GetComponent<SpriteRenderer>().sprite = poopsSprites[3];
                 Instantiate(poop, spawnPoints[3].position, Quaternion.identity);
                 break;
