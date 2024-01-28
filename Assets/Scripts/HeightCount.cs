@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,23 +6,22 @@ public class HeightCount : MonoBehaviour
 {
     public Text heightText;
     public Text heightLb;
-    public float height;
+    public float height = 0;
     private string listOfS;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        height = 0;
+        PointAwarder.OnScoreChange += SetHeight;
     }
 
-    // Update is called once per frame
     void Update(){
-        if(Input.GetKeyDown(KeyCode.UpArrow)){
-            addHeight(0.5f);
-        }
-        if(Input.GetKeyDown(KeyCode.DownArrow)){
-            removeHeight(0.5f);
-        }
+        
+        EvaluateHeight();
+        DebugHeight();
 
+    }
+    public void EvaluateHeight()
+    {
         heightText.text = height.ToString("0.00");
         if (height < 1){
             heightLb.text = "<>";
@@ -43,19 +41,30 @@ public class HeightCount : MonoBehaviour
             heightLb.text = "<LB" + listOfS + ">";
         }
     }
-
-    public void addHeight(float points){
-        height += points;
+    public void SetHeight(float points) => height = points;
+    
+    void DebugHeight()
+    {
+        // if(Input.GetKeyDown(KeyCode.UpArrow)){
+        //     addHeight(0.5f);
+        // }
+        // if(Input.GetKeyDown(KeyCode.DownArrow)){
+        //     removeHeight(0.5f);
+        // }
     }
-
-    public void removeHeight(float points){
-        height -= points;
-        if(height < 0){
-            height = 0;
-        }
-    }
-
-    public float getHeight(){
-        return height;
-    }
+    //
+    // public void addHeight(float points){
+    //     height += points;
+    // }
+    //
+    // public void removeHeight(float points){
+    //     height -= points;
+    //     if(height < 0){
+    //         height = 0;
+    //     }
+    // }
+    //
+    // public float getHeight(){
+    //     return height;
+    // }
 }
